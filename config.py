@@ -14,6 +14,23 @@ prefs.defaults['skip_future'] = False
 prefs.defaults['ignored_books'] = {}
 
 
+def shared_token():
+    '''Token stored by the optional Hardcover Token plugin in the shared
+    plugins/hardcover_shared config (read directly — no dependency on
+    that plugin being installed).'''
+    try:
+        return (JSONConfig('plugins/hardcover_shared')
+                .get('api_token', '') or '').strip()
+    except Exception:
+        return ''
+
+
+def api_token():
+    '''This plugin's own token (a deliberate local override) first,
+    then the shared one.'''
+    return prefs['api_token'] or shared_token()
+
+
 class ConfigWidget(QWidget):
 
     def __init__(self):
@@ -41,6 +58,14 @@ class ConfigWidget(QWidget):
         self.token_edit.setText(prefs['api_token'])
         row.addWidget(self.token_edit)
         layout.addLayout(row)
+
+        if shared_token():
+            note = QLabel(
+                '<i>A shared token from the Hardcover Token plugin is '
+                'configured and is used while the field above is empty; '
+                'a token entered above overrides it.</i>')
+            note.setWordWrap(True)
+            layout.addWidget(note)
 
         self.ignore_unnumbered = QCheckBox(
             'Ignore entries with no series number (novellas, companion books)')

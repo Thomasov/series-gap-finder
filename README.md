@@ -14,6 +14,10 @@ from the free [Hardcover.app](https://hardcover.app) GraphQL API.
    API token from <https://hardcover.app/account/api>, and paste it into
    **Preferences → Plugins → Series Gap Finder → Customize plugin** (the plugin
    will also prompt you on first run).
+   - Alternatively, install the optional
+     [Hardcover Token](https://github.com/Thomasov/hardcover-token) plugin and paste the token there
+     once — its shared token is used by all Hardcover-based plugins whose
+     own token field is left empty (a token pasted here overrides it).
 4. If the button doesn't appear on the toolbar automatically, add it via
    **Preferences → Toolbars & menus → The main toolbar**.
 

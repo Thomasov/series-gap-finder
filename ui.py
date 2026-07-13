@@ -6,7 +6,7 @@ from calibre.gui2 import error_dialog, info_dialog
 from calibre.gui2.actions import InterfaceAction
 from calibre.gui2.threaded_jobs import ThreadedJob
 
-from calibre_plugins.series_gap_finder.config import prefs
+from calibre_plugins.series_gap_finder.config import api_token, prefs
 from calibre_plugins.series_gap_finder.hardcover import author_key, normalize
 from calibre_plugins.series_gap_finder.worker import scan_series
 
@@ -67,9 +67,9 @@ class SeriesGapFinderAction(InterfaceAction):
             return []
 
     def _ensure_token(self):
-        if not prefs['api_token']:
+        if not api_token():
             self.interface_action_base_plugin.do_user_config(self.gui)
-        return prefs['api_token']
+        return api_token()
 
     def _gather(self, book_ids):
         db = self.gui.current_db.new_api

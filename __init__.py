@@ -13,7 +13,7 @@ class SeriesGapFinder(InterfaceActionBase):
                    'using series data from Hardcover.app')
     supported_platforms = ['windows', 'osx', 'linux']
     author = 'Thomas Overfield'
-    version = (1, 0, 5)
+    version = (1, 0, 6)
     minimum_calibre_version = (6, 0, 0)
 
     actual_plugin = 'calibre_plugins.series_gap_finder.ui:SeriesGapFinderAction'
