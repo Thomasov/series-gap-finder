@@ -6,10 +6,10 @@ from the free [Hardcover.app](https://hardcover.app) GraphQL API.
 
 ## Install
 
-1. Get the plugin ZIP: `SeriesGapFinder-1.0.0.zip` (or rebuild it — see below).
+1. Get the plugin ZIP from the latest release (or rebuild it — see below).
 2. In calibre: **Preferences → Plugins → Load plugin from file**, pick the ZIP,
    accept the warning, restart calibre.
-   - Or from a terminal: `calibre-customize -a SeriesGapFinder-1.0.0.zip`
+   - Or from a terminal: `calibre-customize -a SeriesGapFinder-<version>.zip`
 3. Create a free account at [hardcover.app](https://hardcover.app), copy your
    API token from <https://hardcover.app/account/api>, and paste it into
    **Preferences → Plugins → Series Gap Finder → Customize plugin** (the plugin
@@ -73,7 +73,7 @@ configuration (**Customize plugin**), where you can select entries and
 
 ```powershell
 Compress-Archive -Path *.py, plugin-import-name-series_gap_finder.txt `
-  -DestinationPath SeriesGapFinder-1.0.0.zip -Force
+  -DestinationPath SeriesGapFinder.zip -Force
 ```
 
 ## Notes
