@@ -71,10 +71,15 @@ configuration (**Customize plugin**), where you can select entries and
 
 ## Rebuild the ZIP from source
 
+On Windows, 
 ```powershell
-Compress-Archive -Path *.py, plugin-import-name-series_gap_finder.txt `
-  -DestinationPath SeriesGapFinder.zip -Force
+.\build.ps1
 ```
+
+This produces `SeriesGapFinder-<version>.zip`, with the version taken from
+`__init__.py`.
+
+I have only been developing this on Windows so any other contributors are welcome to provide any other build tooling and docs.
 
 ## Notes
 

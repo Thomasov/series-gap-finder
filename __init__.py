@@ -12,8 +12,8 @@ class SeriesGapFinder(InterfaceActionBase):
     description = ('Find missing books in the series you own, '
                    'using series data from Hardcover.app')
     supported_platforms = ['windows', 'osx', 'linux']
-    author = 'Teo Verfield'
-    version = (1, 0, 4)
+    author = 'Thomas Overfield'
+    version = (1, 0, 5)
     minimum_calibre_version = (6, 0, 0)
 
     actual_plugin = 'calibre_plugins.series_gap_finder.ui:SeriesGapFinderAction'

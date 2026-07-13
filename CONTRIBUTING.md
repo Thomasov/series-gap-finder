@@ -10,14 +10,13 @@ library and the Qt/calibre APIs that calibre ships with.
 3. Build the plugin ZIP:
 
    ```powershell
-   Compress-Archive -Path *.py, plugin-import-name-series_gap_finder.txt `
-     -DestinationPath SeriesGapFinder.zip -Force
+   .\build.ps1
    ```
 
 4. Install it into calibre and watch the console for errors:
 
    ```
-   calibre-customize -a SeriesGapFinder.zip
+   calibre-customize -a SeriesGapFinder-<version>.zip
    calibre-debug -g
    ```
 
